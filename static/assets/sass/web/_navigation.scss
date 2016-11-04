@@ -1,5 +1,5 @@
 nav {    
-    position: fixed;
+    position: fixed; z-index: 50;
     top:0px; left:0px; right:0px; 
     width:auto; height: $nav_height;
     //background-color: $nav_bg;

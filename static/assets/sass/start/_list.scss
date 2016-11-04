@@ -13,20 +13,27 @@ ul.tools {
     text-align: center;
     
     li {
-        display: inline-block;
-        border: 1px solid #222; 
-        
-        background: #eee;
-        color: #111;        
-        font-weight: bold;
-        border-radius: 3px;                        
-        box-shadow: 0px 0px 5px #111;
-        
+        display: inline-block;    
         margin-bottom: 20px;
         margin-right: 20px;
+        // overflow: hidden;
         
         > div {
-            padding: 15px 20px;
+            display: block;            
+
+            background: #222;
+            color: #eee;        
+            font-weight: bold;
+            
+            border: 0px solid #111; 
+            border-radius: 3px;                                            
+            
+            padding: 15px 20px;            
+            box-shadow: 0px 0px 10px 1px rgba(0,0,0,.3);
+            
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-size: 350px;
         }
         
     }

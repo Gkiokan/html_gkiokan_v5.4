@@ -1,0 +1,30 @@
+.countdown_wrapper {
+    text-align: center;
+    > div { vertical-align: top; }
+    
+    .d, .m, .y, .s {
+        display: inline-block;
+        line-height: 60px;
+        font-size: 60px;
+    }
+    
+    .s {
+        color: gray;
+        line-height: 50px;
+        font-size: 40px;
+    }
+    
+    
+    .d {
+        color: firebrick;
+    }
+
+    .m {
+        color: deepskyblue;
+    }    
+    
+    .y {
+        color: darkolivegreen;
+    }
+    
+}
