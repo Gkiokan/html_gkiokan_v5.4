@@ -1,0 +1,27 @@
+nav {    
+    position: fixed;
+    top:0px; left:0px; right:0px; 
+    width:auto; height: $nav_height;
+    //background-color: $nav_bg;
+    //color: $nav_color;
+    
+    ul.navigation {
+        display:block; width:auto; height:auto;
+        padding:0px; margin:0px;
+        float: right;
+        text-align: right;
+        
+         li {
+             
+             display:inline-block;
+             float:left;
+             
+              a {
+                  display: block;
+                  padding: 0px 10px; 
+                  line-height: $nav_height;  
+                  color: $nav_color;
+              }
+         }
+    }
+}

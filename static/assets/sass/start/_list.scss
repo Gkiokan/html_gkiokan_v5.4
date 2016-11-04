@@ -1,0 +1,36 @@
+// General 
+.list ul {
+    display:block;
+    padding:0px; margin:0px;
+    list-style: none;
+}
+
+
+// Skills & Tools
+ul.skills,
+ul.tools {
+    display: block;    
+    text-align: center;
+    
+    li {
+        display: inline-block;
+        border: 1px solid #222; 
+        
+        background: #eee;
+        color: #111;        
+        font-weight: bold;
+        border-radius: 3px;                        
+        box-shadow: 0px 0px 5px #111;
+        
+        margin-bottom: 20px;
+        margin-right: 20px;
+        
+        > div {
+            padding: 15px 20px;
+        }
+        
+    }
+    
+}
+
+// Tools 
