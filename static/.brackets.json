@@ -1,9 +1,0 @@
-{    
-    "sass.enabled": true,
-    "sass.compiler": "sass",
-    "sass.options": {
-        "outputDir": "../css",        
-        "sourceComments": true,
-        "outputStyle": "compressed"
-    }
-}
