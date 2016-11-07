@@ -3,13 +3,57 @@
     display:block;
     
     .name {
-        font-size: 50px; 
+        font-size: 70px; 
         line-height: 50px;        
+        
+        > small {
+            font-size: 30%;
+            font-weight: normal;
+            font-style: normal;
+            color: default;
+        }
     }
     
     .slogan {
         font-style: italic;
         color: #888;
     }
+    
+}
+
+
+.me {
+    > div { position: relative }
+        
+    .me {        
+        display: block; height:0px; width:auto; 
+        padding-bottom:56.25%;
+        
+        
+        border: 2px dotted #000;        
+        border-radius: 5px;
+        position: relative; 
+        
+        background-color: darkred;
+//        background-color: aqua;        
+        
+        background-position: center center; 
+        background-size: contain;
+        background-repeat: no-repeat;
+        
+        box-shadow: 0px 0px 10px 5px rgba(0,0,0,.9) inset;
+    }
+    
+    
+    .me_avatar {
+        background-color: #ababab;
+        background-image: url(https://1.gravatar.com/avatar/191bbae71fc8ce2eabb5cda1143757e6?s=400&d=mm);
+    }
+    
+    
+    .me_at_twitch {        
+        background-image: url(https://static-cdn.jtvnw.net/jtv_user_pictures/gkiokan-channel_offline_image-117d427c32210d17-1920x1080.jpeg);
+    }
+    
     
 }

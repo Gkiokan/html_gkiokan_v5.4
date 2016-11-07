@@ -1,6 +1,8 @@
 html, body {
     background: $body_bg;
     color: $body_color;
+    font-size: $body_font_size;
+    line-height: $body_line_height;
     
     position: relative;    
 }
@@ -15,6 +17,8 @@ h1,h2,h3,h4,h5,h6 {
     font-family: 'Kumar One Outline', cursive;
 }
 
+//h3 { font-size: 46px; }
+
 .kumar { 
     font-family: 'Kumar One Outline', cursive;
 }
@@ -25,7 +29,8 @@ h1,h2,h3,h4,h5,h6 {
 
 .space { height: 300px; display:block; }
 
-body > section {    
+body > section,
+body > .main {    
     background-size: contain;
     background-position: center center;
     position: relative;
