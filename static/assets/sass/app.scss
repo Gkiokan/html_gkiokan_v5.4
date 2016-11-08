@@ -2,6 +2,12 @@
 
 // Loading all nessesarry Elements
 @import 'web/_var.scss';
+@import 'web/_mixing.scss';
+
+// Keyframes
+@import 'keyframe/_move.scss';
+
+// Web basec stuff
 @import 'web/_navigation.scss';
 @import 'web/_split.scss';
 @import 'web/_basic.scss';

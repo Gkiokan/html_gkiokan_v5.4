@@ -25,6 +25,9 @@
         background-position: $background_position;
         background-size: cover;
         transform: scale(1.1) rotate($background_rotation);
+
+        @include vendor-prefix('transition', 'all 3s');
+        @include vendor-prefix('animation', 'move 15s infinite');
     }
 
     &:after {

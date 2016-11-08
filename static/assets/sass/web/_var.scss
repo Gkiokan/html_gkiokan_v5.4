@@ -4,7 +4,7 @@ $nav_color  : #fff;
 $nav_bg     : rgba(0,0,0,.8);
 
 
-// Body 
+// Body
 $body_bg : #000;
 $body_color: #ccc;
 $body_font_size : 18px;
@@ -16,3 +16,7 @@ $background_height: 80vh;
 $background_blur : 0px;
 $background_position : center top;
 $background_rotation : 0deg;
+
+// Brekapoints
+$sm : "(max-width:768px)";
+$md : "(max-width:980px)";

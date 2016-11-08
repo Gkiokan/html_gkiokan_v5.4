@@ -37,18 +37,36 @@
 //        background-color: aqua;
 
         background-position: center center;
-        background-size: contain;
         background-repeat: no-repeat;
+        background-size: contain;
 
         box-shadow: 0px 0px 10px 5px rgba(0,0,0,.9) inset;
+
+        @include vendor-prefix('transition', 'all .3s');
     }
 
 
     .me_avatar {
         background-color: #ababab;
         background-image: url(https://1.gravatar.com/avatar/191bbae71fc8ce2eabb5cda1143757e6?s=400&d=mm);
-        border-radius: 50%;
+        border-radius: 50%; padding-bottom:0px;
         width:250px; height: 250px;
+
+        @media #{$md}{
+            width: 200px; height:200px;
+        }
+
+        @media #{$sm}{
+            width: 300px; height:300px;
+            margin:0px auto;
+            margin-bottom: 100px;
+        }
+
+        @media (max-width:400px){
+            width: auto; height:0px;
+            padding-bottom: 100%;
+        }
+
     }
 
 
