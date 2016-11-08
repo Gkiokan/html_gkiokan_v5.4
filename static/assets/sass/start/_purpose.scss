@@ -1,0 +1,33 @@
+.purpose {
+    position: relative;
+
+    &:before,
+    &:after {
+        content: '';
+        display: block;
+        position: absolute;
+        top:0px; left:0px; right:0px; bottom:0px;
+    }
+
+    &:before {
+        z-index:1;
+        background-color: black;
+        // background-image: url(http://www.magic4walls.com/wp-content/uploads/2014/02/texture-stripedtexture-line-black-and-white-background.jpeg); // white stripes
+        // background-image: url(http://wallpaper.zone/img/104514.jpg); // smoke 1 black-white / contain
+        // background-image: url(http://wallpaper.zone/img/3685988.jpg); // smoke 2 colorfull / cover
+        background-image: url(http://wallpaper.zone/img/3685912.jpg); // smoke 3 mixed
+        background-size: contain;
+        background-position: center center;
+        background-repeat: no-repeat;
+    }
+
+    &:after {
+        z-index:2;
+        background: rgba(0,0,0,.7);
+    }
+
+    .row {
+        position: relative;
+        z-index: 3;
+    }
+}
