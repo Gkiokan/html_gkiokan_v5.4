@@ -41,12 +41,22 @@
             line-height: 60px;
             font-size: 60px;
             text-shadow: 4px 5px 5px #111;
+
+            @media #{$sm}{
+                font-size:30px;
+                line-height:30px;
+            }
         }
 
         .p {
             color: gray;
             line-height: 50px;
             font-size: 40px;
+
+            @media #{$sm}{
+                font-size:30px;
+                line-height:25px;
+            }
         }
 
 

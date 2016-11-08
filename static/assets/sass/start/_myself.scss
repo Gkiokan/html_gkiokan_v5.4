@@ -19,6 +19,17 @@
         color: #888;
     }
 
+
+    @media #{$sm}{
+          .name {
+              font-size:40px;
+              > small {
+                  display: block;
+                  line-height:30px;
+              }
+          }
+    }
+
 }
 
 
