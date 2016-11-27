@@ -1,38 +1,57 @@
+/*
+    Start with basic DOM Properties
+*/
 html, body {
     background: $body_bg;
     color: $body_color;
+    position: relative;
+
     font-size: $body_font_size;
     line-height: $body_line_height;
-    
-    position: relative;    
+    font-family: 'Open Sans', sans-serif;
 }
 
-body {    
-    font-family: 'Open Sans', sans-serif;    
-    padding-top:100px;       
 
-}
-
-h1,h2,h3,h4,h5,h6 {
-    font-family: 'Kumar One Outline', cursive;
-}
-
-h3 { font-size: 28px; border-bottom: 1px solid #888; }
-
-.kumar { 
-    font-family: 'Kumar One Outline', cursive;
-}
-
-.open_sans {
-    font-family: 'Open Sans', sans-serif;    
-}
-
+/*
+  Spacer elements
+*/
 .space { height: 300px; display:block; }
 
-body > section,
-body > .main {    
+/*
+    Basic Setup for HTML5 Setting up
+*/
+.main {
+    display: block;
     background-size: contain;
     background-position: center center;
     position: relative;
     z-index:10;
+}
+
+/*
+    Vertical align centered
+*/
+.vcenter {
+    display: table;
+    width: 100%;
+    position: relative;
+
+    > div,
+    > article,
+    > section {
+        display: table-cell;
+        width: 100%;
+        vertical-align: middle;
+    }
+}
+
+/*
+    Hight classes
+*/
+.fullheight {
+    height: 100vh;
+}
+
+.halfheight {
+    height: 50vh;
 }
