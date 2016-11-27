@@ -55,3 +55,32 @@ html, body {
 .halfheight {
     height: 50vh;
 }
+
+
+/*
+    Scroll Icon
+*/
+.scrolldown {
+    display:block;
+    width:auto; margin: 30px auto;
+
+    .icon {
+        position: relative; z-index: 20;
+        display:block;
+        width:80px; height:80px;
+        margin:0px auto;
+        fill: #eee;
+        cursor: pointer;
+
+        // Lets define the Icon here
+        &:before {
+            content:'';
+            position: absolute;
+            display: none;
+            top:0px; left:0px; right:0px; bottom: 0px;
+            background: url(../svg/scrolldown.svg) center center no-repeat;
+            background-size: contain;
+        }
+
+    }
+}

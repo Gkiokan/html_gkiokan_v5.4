@@ -1,14 +1,24 @@
-// Footer 
-footer {     
+/*
+    General Footer Setup
+*/
+footer {
     display: block;
     position: relative; z-index: 10;
     background-color: #050505;
-    
-    
+
+
     font-size: 12px;
     line-height:15px;
     color :#888;
-    
+
     padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+/*
+    Fix for small devices
+*/
+.version_info {
+    display: block;
     padding-bottom: 50px;
 }

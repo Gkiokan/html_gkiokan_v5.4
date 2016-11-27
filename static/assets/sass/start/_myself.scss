@@ -1,7 +1,18 @@
+/*
+    Actually the header
+*/
+body.collapsed {
+  .myself {
+      height: 500px;
+  }
+}
+
 .myself {
     min-height: 300px;
     position: relative;
     z-index: 10;
+
+    @include vendor-prefix('transition', 'all 1.5s ease-in-out');
 
     .name {
         font-size: 4rem;
@@ -31,10 +42,19 @@
           }
     }
 
+
+    .scrolldown {
+        position: absolute; z-index: 20;
+        bottom: 0px; left:0px; right:0px;
+    }
 }
 
+/*
+    About me section
+*/
+section.me {
+    padding-top: 50px;
 
-.me {
     > div { position: relative }
 
     .me {
@@ -45,7 +65,7 @@
         border-radius: 5px;
         position: relative;
 
-        background-color: darkred;
+        // background-color: darkred;
 //        background-color: aqua;
 
         background-position: center center;
