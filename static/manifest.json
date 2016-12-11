@@ -1,0 +1,14 @@
+{
+  "lang": "de_DE",
+  "background_color": "#000000",
+  "name": "Gkiokan.NET | Prepare dev code 2k17",
+  "short_name": "Gkiokan.NET ",
+  "display": "standalone",
+  "icons": [
+    {
+      "src": "YOU-NEED-TO-HAVE-A-144-x-144-ICON.png",
+      "sizes": "144x144",
+      "type": "image/png"
+    }
+  ]
+}
