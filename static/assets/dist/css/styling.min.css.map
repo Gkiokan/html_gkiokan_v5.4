@@ -1,0 +1,8 @@
+{
+"version": 3,
+"mappings": "AAAA,IAAK,CACH,UAAU,CAAE,IAAI",
+"sources": ["assets/src/sass/styling.scss"],
+"sourcesContent": ["body {\n  background: #222;\n}\n"],
+"names": [],
+"file": "styling.min.css"
+}

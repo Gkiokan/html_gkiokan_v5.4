@@ -18,17 +18,18 @@ module.exports = function(grunt) {
 		 */
     sass: {
 	      dist: {
-	        options:  {
-	            style: 'compressed',
-	            debugInfo: false
-	        },
-	        files: [{
-	            expand: true,
-	            cwd: 'assets/sass',
-	            src: ['**/*.scss'],
-	            dest: 'assets/css',
-	            ext: '.min.css'
-	        }],
+		        options:  {
+		            style: 'compressed',
+								sourcemap: 'inline',
+		            debugInfo: false
+		        },
+		        files: [{
+		            expand: true,
+		            cwd: 'assets/src/sass',
+		            src: ['**/*.scss'],
+		            dest: 'assets/css',
+		            ext: '.min.css'
+		        }],
 	      }
 		},
 
@@ -37,13 +38,14 @@ module.exports = function(grunt) {
 		 * Let's do some minifisation on the JS files
 		 */
     uglify: {
+				// Hold this option for later usage, maybe filename output or smth.
         // options: {
         //     banner: '/* Copyright by Gkiokan | <%= pkg.name %> last compile at <%= grunt.template.today("yyyy-mm-dd") %> */'
         // },
         dist: {
           files: [{
               expand: true,
-              cwd: 'assets/javascript',
+              cwd: 'assets/src/javascript',
               src: '**/*.js',
               dest: 'assets/js',
 							ext: '.min.js'
@@ -78,17 +80,34 @@ module.exports = function(grunt) {
 		 */
 		concat: {
 			 js: {
-				 options: { banner: banner_modified },
-				 src: ['assets/js/*.js'],  // [['foo/*.js', 'bar/*.js'], 'baz/*.js']
-				 dest: 'assets/release/app.complete.min.js',      // 'build/abcde.js'
+					 options: { banner: banner_modified },
+					 src: ['assets/js/*.js'],
+					 dest: 'assets/dist/js/app.default.min.js',
 			 },
 
 			 css: {
-				 options: { banner: banner_modified },
-				 src: ['assets/css/*.css'],  // [['foo/*.js', 'bar/*.js'], 'baz/*.js']
-				 dest: 'assets/release/app.complete.min.css',      // 'build/abcde.js'
+					 options: { banner: banner_modified },
+					 src: ['assets/css/*.css'],
+					 dest: 'assets/dist/css/app.complete.min.css',
 			 }
 		},
+
+
+		/*
+		 * Copy scripts
+		 * *
+		 * Exemplary usage on SourceMap files top copy them from the /css to dist/css folder.
+		 */
+		 copy: {
+			 sourcemaps: {
+			     files: [{
+							 	expand: true,
+								cwd: 'assets/css',
+								src: ['*.css.map'],
+								dest: 'assets/dist/css/',
+						 }]
+		   }
+		 },
 
 
 		/*
@@ -115,6 +134,8 @@ module.exports = function(grunt) {
 
 	/*
 	* Seperating the js files
+	* *
+	* Each folder in assets/js/* will get his own *.min.js file, which can be
 	*/
 	grunt.registerTask("pp", "Finds and prepares modules for concatenation.", function() {
 	    // get all module directories
@@ -131,7 +152,7 @@ module.exports = function(grunt) {
 	        concat[dirName] = {
 							options: { banner: banner_modified },
 	            src: [dir + '/**/*.js'],
-	            dest: 'assets/release/app.' + dirName + '.min.js'
+	            dest: 'assets/dist/js/app.' + dirName + '.min.js'
 	        };
 
 	        // add module subtasks to the concat task in initConfig
@@ -145,10 +166,12 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-uglify');
 	grunt.loadNpmTasks('grunt-browser-sync');
 	grunt.loadNpmTasks('grunt-contrib-concat');
+	grunt.loadNpmTasks('grunt-contrib-copy');
 
   grunt.registerTask('default', ['watch', 'uglify', 'browserSync']);
-	grunt.registerTask('js', ['uglify:dist', 'pp', 'cc']);
-	grunt.registerTask('css', ['sass:dist']);
+
+	grunt.registerTask('js', ['uglify', 'pp', 'cc:js']);
+	grunt.registerTask('css', ['sass', 'cc:css', 'copy:sourcemaps']);
 	grunt.registerTask('cc', ['concat']);
 
   grunt.registerTask('build', ['sass:build', 'uglify']);
