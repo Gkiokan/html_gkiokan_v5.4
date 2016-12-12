@@ -1,3 +1,27 @@
+/*
+	File: Gruntfile.js
+	Author: Gkiokan Sali
+	Date: 2.12.2016
+	Comments: Grunfile.js Configuration for new Projects
+	usage:
+	I've prepared a nicely structure for running with grunt.
+	All your source development files will be in assets/src.
+	Beneath that you split up your code in /js and /sass folders.
+	By default as the code is, javascript and css will be compiled to
+	assets/js by uglyfy and assets/css by sass.
+	Foreach file in the dev JS folder, it will be concatenated to one min.js file.
+	Each folder will be concatenated to a app.*.min.js file afterwards in the dist/js folder.
+	The same rule goes for the css files too. Except the sourcemaps of the compiled css
+	will be copied by another function.
+
+	CLI Usage:
+	grunt default - should work if not, help me to fix that.
+	grunt css - compile all the CSS stuff
+	grunt js - compile all the JS stuff
+	grunt cc - concatenate the whole css and js stuff to dist folder
+	grunt bower - compile the bower components to one min.js / min.css files.
+	grunt build - do everything
+*/
 module.exports = function(grunt) {
 	var 	banner_modified =
 				'/* Project: <%= pkg.name %>    */\n' +
@@ -109,6 +133,33 @@ module.exports = function(grunt) {
 		   }
 		 },
 
+		 /*
+ 		 * Bower Components concat
+ 		 * *
+		 *
+ 		 */
+		 bower_concat: {
+			  all: {
+				    dest: {
+				      'js'   : 'assets/src/javascript/bower.js',
+				      'css'  : 'assets/src/sass/bower.scss'
+							// 'scss' : 'assets/src/sass/bower.scss'
+				    },
+				    exclude: [
+				      'jquery', 'modernizr', 'vue',
+							'bootstrap', 'font-awesome'
+				    ],
+				    dependencies: {
+				      // 'underscore': 'jquery',
+				      // 'backbone': 'underscore',
+				      // 'jquery-mousewheel': 'jquery'
+				    },
+				    bowerOptions: {
+				      relative: false
+				    }
+			  }
+		},
+
 
 		/*
 		 * Watch Configurations
@@ -116,12 +167,12 @@ module.exports = function(grunt) {
 		watch: {
 			css: {
 				files: '**/*.scss',
-				tasks: ['sass:dist']
+				tasks: ['css']
 			},
 
       scripts: {
         files: '**/*.js',
-        tasks: ['uglify']
+        tasks: ['js']
       }
 		}
 
@@ -161,18 +212,21 @@ module.exports = function(grunt) {
 	});
 
 
+	// Load all nessesary npm module
 	grunt.loadNpmTasks('grunt-contrib-sass');
 	grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-uglify');
-	grunt.loadNpmTasks('grunt-browser-sync');
 	grunt.loadNpmTasks('grunt-contrib-concat');
 	grunt.loadNpmTasks('grunt-contrib-copy');
+	grunt.loadNpmTasks('grunt-bower-concat');
+	grunt.loadNpmTasks('grunt-browser-sync');
 
-  grunt.registerTask('default', ['watch', 'uglify', 'browserSync']);
 
+	// Register our Custom Tasks
+  grunt.registerTask('default', ['watch', 'browserSync']);
 	grunt.registerTask('js', ['uglify', 'pp', 'cc:js']);
 	grunt.registerTask('css', ['sass', 'cc:css', 'copy:sourcemaps']);
 	grunt.registerTask('cc', ['concat']);
-
-  grunt.registerTask('build', ['sass:build', 'uglify']);
+	grunt.registerTask('bower', ['bower_concat']);
+  grunt.registerTask('build', ['bower', 'css', 'js']);
 }
