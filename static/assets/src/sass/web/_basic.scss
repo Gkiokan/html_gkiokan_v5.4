@@ -11,6 +11,23 @@ html, body {
     font-family: 'Open Sans', sans-serif;
 }
 
+/*
+  Links
+*/
+a {
+    color: $a_color;
+    position: relative;
+    border-bottom:0px solid dimgray;
+    text-decoration: none !important;
+
+    @include vendor-prefix('transition', 'all .4s');
+
+    &:hover {
+        color: deepskyblue;
+        border-bottom:0px solid $a_color_hover;
+    }
+}
+
 
 /*
   Spacer elements

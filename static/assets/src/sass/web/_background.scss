@@ -28,7 +28,11 @@
         transform: scale(1.1) rotate($background_rotation);
 
         @include vendor-prefix('transition', 'all 3s');
-        @include vendor-prefix('animation', 'move 15s infinite');
+
+        // Only $sm+ can have the animatino...
+        @media #{$sm_min}{
+            @include vendor-prefix('animation', 'move 15s infinite');
+        }
     }
 
     &:after {

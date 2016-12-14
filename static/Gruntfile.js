@@ -130,6 +130,14 @@ module.exports = function(grunt) {
 								src: ['*.css.map'],
 								dest: 'assets/dist/css/',
 						 }]
+		   },
+			 images: {
+			     files: [{
+							 	expand: true,
+								cwd: 'assets/images',
+								src: ['*.*'],
+								dest: 'assets/dist/images/',
+						 }]
 		   }
 		 },
 
@@ -225,7 +233,7 @@ module.exports = function(grunt) {
 	// Register our Custom Tasks
   grunt.registerTask('default', ['watch', 'browserSync']);
 	grunt.registerTask('js', ['uglify', 'pp', 'cc:js']);
-	grunt.registerTask('css', ['sass', 'cc:css', 'copy:sourcemaps']);
+	grunt.registerTask('css', ['sass', 'cc:css', 'copy']);
 	grunt.registerTask('cc', ['concat']);
 	grunt.registerTask('bower', ['bower_concat']);
   grunt.registerTask('build', ['bower', 'css', 'js']);

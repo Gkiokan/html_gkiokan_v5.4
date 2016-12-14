@@ -1,9 +1,15 @@
 $(function(){
     countdown.run('#countdown_new_year', new Date('2017/01/01'))
 
-    // lets do some magic for the header
+
+    /*
+        Started animation move thing
+    */
      setTimeout(function(){
-        if($(document).scrollTop()==0)
-        $('body').addClass('collapsed')        
-     }, 1300)
+        // If the user is on the top AND have a device larger then 769px
+        if($(document).scrollTop()==0 && $(window).width() >= 769)
+            $('body').addClass('collapsed')
+     }, 1337)
+
+     
 });

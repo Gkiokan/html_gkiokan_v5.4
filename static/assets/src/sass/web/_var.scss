@@ -3,6 +3,9 @@ $nav_height : 80px;
 $nav_color  : #fff;
 $nav_bg     : rgba(0,0,0,.8);
 
+// Links
+$a_color       : dimgray;
+$a_color_hover : deepskyblue;
 
 // Body
 $body_bg : #000;
@@ -17,6 +20,9 @@ $background_blur : 0px;
 $background_position : center top;
 $background_rotation : 0deg;
 
-// Brekapoints
+// Brekapoints SM first
+$sm_min : "(min-width:769px)";
+
+// Breakpoints LG first
 $sm : "(max-width:768px)";
 $md : "(max-width:992px)";
