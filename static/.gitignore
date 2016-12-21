@@ -1,4 +1,7 @@
+# G ignored stuff
 /bower_components
 /node_modules
 /assets/js
 /assets/css
+/assets/fonts
+/assets/lib

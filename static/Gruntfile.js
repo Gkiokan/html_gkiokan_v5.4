@@ -131,6 +131,7 @@ module.exports = function(grunt) {
 								dest: 'assets/dist/css/',
 						 }]
 		   },
+
 			 images: {
 			     files: [{
 							 	expand: true,
@@ -138,7 +139,21 @@ module.exports = function(grunt) {
 								src: ['*.*'],
 								dest: 'assets/dist/images/',
 						 }]
-		   }
+		   },
+
+			 fonts: {
+				 		files: [{
+								expand: true,
+								cwd: 'assets/src/fonts',
+								src: ['*.*'],
+								dest: 'assets/fonts'
+						},{
+								expand: true,
+								cwd: 'assets/src/fonts',
+								src: ['*.*'],
+								dest: 'assets/dist/fonts'
+						}]
+			 }
 		 },
 
 		 /*
@@ -167,6 +182,26 @@ module.exports = function(grunt) {
 				    }
 			  }
 		},
+
+
+		/*
+		 * Bower build tasks
+		 */
+		 bower: {
+				 install: {
+			       options: {
+			         copy: true,
+			         targetDir: 'assets/lib',
+			         //layout: 'byType',
+			         install: true,
+			         verbose: false,
+			         prune: false,
+			         cleanTargetDir: true,
+			         cleanBowerDir: false,
+			         bowerOptions: {}
+			       }
+		     }
+		 },
 
 
 		/*
@@ -226,6 +261,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-uglify');
 	grunt.loadNpmTasks('grunt-contrib-concat');
 	grunt.loadNpmTasks('grunt-contrib-copy');
+	grunt.loadNpmTasks('grunt-bower-task');
 	grunt.loadNpmTasks('grunt-bower-concat');
 	grunt.loadNpmTasks('grunt-browser-sync');
 
@@ -233,8 +269,8 @@ module.exports = function(grunt) {
 	// Register our Custom Tasks
   grunt.registerTask('default', ['watch', 'browserSync']);
 	grunt.registerTask('js', ['uglify', 'pp', 'cc:js']);
-	grunt.registerTask('css', ['sass', 'cc:css', 'copy']);
+	grunt.registerTask('css', ['sass', 'cc:css']);
 	grunt.registerTask('cc', ['concat']);
-	grunt.registerTask('bower', ['bower_concat']);
-  grunt.registerTask('build', ['bower', 'css', 'js']);
+	grunt.registerTask('b', ['bower']);
+  grunt.registerTask('build', ['bower', 'css', 'js', 'copy']);
 }
