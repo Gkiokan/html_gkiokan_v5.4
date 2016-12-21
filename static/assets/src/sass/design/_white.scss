@@ -10,7 +10,7 @@ body.white {
 
     // Background layer
     .background {
-        &:before { background-color: #fff; filter: invert(100%); }
+        &:before { background-color: #fff; @include vendor-prefix('filter', 'invert(100%)');  }
         &:after {
             background: -moz-linear-gradient(top,  rgba(255,255,255,1) 0%, rgba(255,255,255, 1) 20%, rgba(255,255,255, .9) 45%, rgba(255,255,255,0) 100%);
             background: -webkit-linear-gradient(top,  rgba(255,255,255,1) 0%, rgba(255,255,255, 1) 20%, rgba(255,255,255, .9) 45%, rgba(255,255,255,0) 100%);
@@ -30,10 +30,25 @@ body.white {
         .slogan { color: #555; }
     }
 
+
+    // countdown
+    .countdown {
+        color: #eee;
+        overflow:hidden;
+
+        &:before {
+            @include vendor-prefix('filter', 'blur(3px)');
+            @include vendor-prefix('animation', 'move 90s infinite');
+            @include vendor-prefix('transform', 'scale(1.4)');
+        }
+        &:after { background: rgba(0,0,0,.4); }
+    }
+
+
     // purpose part
     .purpose {
-        &:before { filter: invert(100%); }
-        &:after { background-color: transparent; }
+        &:before { @include vendor-prefix('filter', 'invert(100%)');  }
+        &:after { background-color: rgba(255,255,255,.82); }
     }
 
 }

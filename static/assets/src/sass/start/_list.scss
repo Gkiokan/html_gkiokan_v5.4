@@ -13,36 +13,43 @@ ul.tools {
     text-align: center;
 
     li {
-        display: block;
+        display: inline-block;
         margin-bottom: 20px;
-        margin-right: 20px;
+        vertical-align: top;
         // overflow: hidden;
 
-        > div {
+        div.title {
             display: block;
+            cursor: pointer;
+            height: 50px; line-height: 50px;
 
-            background: #050505;
-            // background: #111;
-            color: #eee;
-            font-weight: bold;
+            background: #fff;
+            color: #555;
 
-            border-bottom: 1px solid #1a1a1a;
-            border-radius: 3px;
-
-            padding: 15px 20px;
-            box-shadow: 0px 0px 10px 5px rgba(0,0,0,.5);
-
-            background-position: center center;
-            background-repeat: no-repeat;
-            background-size: 350px;
+            border-left: 5px solid #eee;
+            border-radius: 45px;
+            padding: 0px 10px;
+            // box-shadow: 0px 0px 10px 5px rgba(0,0,0,.5);
 
             @include vendor-prefix('transition', 'all .3s');
 
             &:hover {
-                background: #111;
-                cursor:crosshair;
+                background: #eee;
+                color: #444;
             }
-        }
+
+            // Icon specific
+            .icon, .name { vertical-align: top; }
+            .icon.g {
+                top: 5px; left: -5px;
+                &.g-x2 { top: 0px; left: -10px; }
+                &.g-x2 + .name { left: -10px; }
+             }
+
+            .name { position: relative; }
+
+
+        } // end title
 
     }
 

@@ -1,0 +1,42 @@
+/*
+    Icon sets
+*/
+
+.g {
+
+    &.php:before { background-image: url(../images/svg/php.svg); }
+    &.wp:before { background-image: url(../images/svg/wp.svg); }
+    &.wp.clean:before { background-image: url(../images/svg/wp_clean.svg); }
+
+    &.css:before { background-image: url(../images/svg/css3.svg); }
+    &.sass:before { background-image: url(../images/svg/sass.svg); }
+    &.js:before { background-image: url(../images/svg/js.svg); }
+    &.html:before { background-image: url(../images/svg/html5.svg); }
+    &.git:before { background-image: url(../images/svg/git.svg); }
+    &.npm:before { background-image: url(../images/svg/npm.svg); }
+
+    &.api:before { background-image: url(../images/svg/api.svg); }
+    &.saas:before { background-image: url(../images/svg/saas.svg); }
+    &.saas2:before { background-image: url(../images/svg/saas2.svg); }
+
+    &.atom:before { background-image: url(../images/svg/atom.png); }
+    &.brackets:before { background-image: url(../images/svg/brackets.png); }
+
+
+    &.bower:before { background-image: url(../images/svg/bower.png); }
+    &.composer:before { background-image: url(../images/svg/composer.png); }
+    &.apache:before { background-image: url(../images/svg/apache.svg); }
+    &.postman:before { background-image: url(../images/svg/postman.png); }
+
+    &.chrome:before { background-image: url(../images/svg/chrome.svg); }
+    &.safari:before { background-image: url(../images/svg/safari.svg); }
+    &.ff:before { background-image: url(../images/svg/ff.svg); }
+    &.ie:before { background-image: url(../images/svg/ie.svg); }
+
+    &.console:before { background-image: url(../images/svg/console.svg); }
+    &.windows:before { background-image: url(../images/svg/windows.svg); }
+    &.windows.clean:before { background-image: url(../images/svg/windows_clean.svg); }
+    &.mac:before { background-image: url(../images/svg/mac.svg); }
+    &.mac.clean:before { background-image: url(../images/svg/mac_clean.svg); }
+
+}
