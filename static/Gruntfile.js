@@ -272,5 +272,5 @@ module.exports = function(grunt) {
 	grunt.registerTask('css', ['sass', 'cc:css']);
 	grunt.registerTask('cc', ['concat']);
 	grunt.registerTask('b', ['bower']);
-  grunt.registerTask('build', ['bower', 'css', 'js', 'copy']);
+  grunt.registerTask('build', ['b', 'css', 'js', 'copy']);
 }
