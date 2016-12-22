@@ -1,6 +1,6 @@
 .split_200 {
     display: block;
-    height: 200px;    
+    height: 200px;
 }
 
 .split_100 {
@@ -11,4 +11,7 @@
 .split_50 {
     display: block;
     height: 50px;
-}    
+}
+
+.split_right { margin-right: 10px; }
+.split_left  { margin-left: 10px; }

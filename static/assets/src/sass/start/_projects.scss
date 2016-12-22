@@ -1,0 +1,15 @@
+/*
+    Project List
+*/
+.projects {
+
+    // Panel body
+    .panel-body { font-size: 0.9rem; }
+
+    // Panel footer
+    .panel-footer { display:none; }
+
+    // min-height easy fix
+    .col-sm-6 { min-height: 400px;}
+
+}

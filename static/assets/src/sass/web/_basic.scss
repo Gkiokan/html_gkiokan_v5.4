@@ -30,6 +30,12 @@ a {
 
 
 /*
+    Button resets
+*/
+.btn, a { outline: none !important; }
+.noborder { border: none; }
+
+/*
   Spacer elements
 */
 .space { height: 300px; display:block; }
@@ -65,13 +71,8 @@ a {
 /*
     Hight classes
 */
-.fullheight {
-    height: 100vh;
-}
-
-.halfheight {
-    height: 50vh;
-}
+.fullheight { height: 100vh; }
+.halfheight { height: 50vh; }
 
 
 /*
