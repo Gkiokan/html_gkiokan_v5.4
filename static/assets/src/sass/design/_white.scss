@@ -10,8 +10,16 @@ body.white {
 
     // Background layer
     .background {
-        &:before { background-color: #fff; @include vendor-prefix('filter', 'invert(100%)');  }
+        &:before {
+            background-color: #fff;
+            @include vendor-prefix('filter', 'invert(100%)');
+        }
         &:after {
+            background: #fff;
+            @include vendor-prefix('transition', 'all 2s');
+        }
+        &.active:after {
+            background: #fff;
             background: -moz-linear-gradient(top,  rgba(255,255,255,1) 0%, rgba(255,255,255, 1) 20%, rgba(255,255,255, .9) 45%, rgba(255,255,255,0) 100%);
             background: -webkit-linear-gradient(top,  rgba(255,255,255,1) 0%, rgba(255,255,255, 1) 20%, rgba(255,255,255, .9) 45%, rgba(255,255,255,0) 100%);
             background: linear-gradient(to bottom, rgba(255,255,255,1) 0%, rgba(255,255,255, 1) 20%, rgba(255,255,255, .9) 45%, rgba(255,255,255,0) 100%);

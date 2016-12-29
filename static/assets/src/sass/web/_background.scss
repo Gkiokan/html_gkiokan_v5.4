@@ -42,20 +42,14 @@
         position: absolute;  z-index: 2;
         top:0px; right:0px; left:0px; bottom:0px;
 
-        background: rgba(0,0,0,.8);
+        background: #fff;
         transform: rotate(180deg);
         // border: red 10px solid;
 
-        /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#000000+0,000000+100&0.65+0,0+100;Neutral+Density */
-//        background: -moz-linear-gradient(top,  rgba(0,0,0,0.65) 0%, rgba(0,0,0,0) 100%); /* FF3.6-15 */
-//        background: -webkit-linear-gradient(top,  rgba(0,0,0,0.65) 0%,rgba(0,0,0,0) 100%); /* Chrome10-25,Safari5.1-6 */
-//        background: linear-gradient(to bottom,  rgba(0,0,0,0.65) 0%,rgba(0,0,0,0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-//        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a6000000', endColorstr='#00000000',GradientType=0 ); /* IE6-9 */
         background: -moz-linear-gradient(top,  rgba(0,0,0,1) 0%, rgba(0,0,0,0.88) 15%, rgba(0,0,0,0.83) 39%, rgba(0,0,0,0) 100%);
         background: -webkit-linear-gradient(top,  rgba(0,0,0,1) 0%,rgba(0,0,0,0.88) 15%,rgba(0,0,0,0.83) 39%,rgba(0,0,0,0) 100%);
         background: linear-gradient(to bottom,  rgba(0,0,0,1) 0%,rgba(0,0,0,0.88) 15%,rgba(0,0,0,0.83) 39%,rgba(0,0,0,0) 100%);
         filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#00000000',GradientType=0 );
-
     }
 
 }
