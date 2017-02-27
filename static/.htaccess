@@ -19,3 +19,8 @@ Header set Cache-Control "max-age=31536000, public"
 <filesMatch ".(css|js)$">
 Header set Cache-Control "max-age=2628000, public"
 </filesMatch>
+
+#
+# Fix host for cancom.de
+RewriteCond %{HTTP_HOST} ^gkiokan\.net
+RewriteRule ^(.*)$ https://www.gkiokan.net/$1 [R=permanent,L]
